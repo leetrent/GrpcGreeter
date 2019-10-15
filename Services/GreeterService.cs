@@ -17,6 +17,10 @@ namespace GrpcGreeter
 
         public override Task<HelloReply> SayHello(HelloRequest request, ServerCallContext context)
         {
+            Console.WriteLine("[GreeterService][constructor] => (request.Name): " + (request.Name));
+            Console.WriteLine("[GreeterService][constructor] => (request).....: " + (request));
+
+            
             return Task.FromResult(new HelloReply
             {
                 Message = "Hello " + request.Name
